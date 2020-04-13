@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name sinope)(type Legacy)(uri ${KIPRJMOD}/sinope.lib)(options "")(descr ""))
+)
