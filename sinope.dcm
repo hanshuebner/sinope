@@ -1,3 +1,24 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP DS17487
+D Real-Time Clock
+F https://datasheets.maximintegrated.com/en/ds/DS17285-DS17887.pdf
+$ENDCMP
+#
+$CMP MAX695
+D Microprocessor Supervisory Circuit, DIP-16
+K Power Supervisor
+F https://datasheets.maximintegrated.com/en/ds/MAX690-MAX695.pdf
+$ENDCMP
+#
+$CMP TC551001
+D 128KB Static RAM
+F http://www.donat.org/ti92/TC551001B-L.pdf
+$ENDCMP
+#
+$CMP TMS9929A
+D Video Display Processor
+F http://www.cs.columbia.edu/~sedwards/papers/TMS9918.pdf
+$ENDCMP
+#
 #End Doc Library
