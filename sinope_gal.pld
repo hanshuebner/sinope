@@ -1,0 +1,28 @@
+GAL22V10
+22V10
+
+/MREQ /IOREQ A15 A14 A7 A6 A5 A4 NC NC NC GND
+NC /ROMCS /RAMCS NC NC NC NC NC /SIOCS /PIOCS /CTCCS VCC
+
+/CTCCS = /IOREQ * /A7 * /A6 * /A5 * /A4 
+/PIOCS = /IOREQ * /A7 * /A6 * /A5 * A4 
+/SIOCS = /IOREQ * /A7 * /A6 * A5 * /A4 
+
+/RAMCS = /MREQ * /A15 * /A14
+/ROMCS = /MREQ * /A15 + /A14
+
+
+DESCRIPTION
+
+sinope's address decoder.  Implements the following mappings:
+
+I/O
+
+0x Z80 CTC
+1x Z80 PIO
+2x Z80 SIO
+
+Memory:
+
+0000-3FFF ROM
+4000-FFFF RAM
