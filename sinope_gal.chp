@@ -3,13 +3,13 @@
                                 GAL22V10
 
                           -------\___/-------
-                    /MREQ |  1           24 | VCC
+                     MREQ |  1           24 | VCC
                           |                 |
-                   /IOREQ |  2           23 | /CTCCS
+                    IOREQ |  2           23 | CTCCS
                           |                 |
-                      A15 |  3           22 | /PIOCS
+                      A15 |  3           22 | PIOCS
                           |                 |
-                      A14 |  4           21 | /SIOCS
+                      A14 |  4           21 | SIOCS
                           |                 |
                        A7 |  5           20 | NC
                           |                 |
@@ -21,9 +21,9 @@
                           |                 |
                        NC |  9           16 | NC
                           |                 |
-                       NC | 10           15 | /RAMCS
+                       NC | 10           15 | RAMCS
                           |                 |
-                       NC | 11           14 | /ROMCS
+                       NC | 11           14 | ROMCS
                           |                 |
                       GND | 12           13 | NC
                           -------------------

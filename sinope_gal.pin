@@ -2,8 +2,8 @@
 
  Pin # | Name     | Pin Type
 -----------------------------
-   1   | /MREQ    | Clock/Input
-   2   | /IOREQ   | Input
+   1   | MREQ     | Clock/Input
+   2   | IOREQ    | Input
    3   | A15      | Input
    4   | A14      | Input
    5   | A7       | Input
@@ -15,15 +15,15 @@
   11   | NC       | Input
   12   | GND      | GND
   13   | NC       | Input
-  14   | /ROMCS   | Output
-  15   | /RAMCS   | Output
+  14   | ROMCS    | Output
+  15   | RAMCS    | Output
   16   | NC       | NC
   17   | NC       | NC
   18   | NC       | NC
   19   | NC       | NC
   20   | NC       | NC
-  21   | /SIOCS   | Output
-  22   | /PIOCS   | Output
-  23   | /CTCCS   | Output
+  21   | SIOCS    | Output
+  22   | PIOCS    | Output
+  23   | CTCCS    | Output
   24   | VCC      | VCC
 
