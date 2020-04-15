@@ -429,124 +429,12 @@ F 3 "" H 2550 2000 50  0001 C CNN
 $EndComp
 Text GLabel 2900 7150 2    50   Output ~ 0
 ~RESET
-$Comp
-L Device:C C2
-U 1 1 5EAE2B1A
-P 2250 1500
-F 0 "C2" H 2365 1546 50  0000 L CNN
-F 1 "47pF" H 2365 1455 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2288 1350 50  0001 C CNN
-F 3 "~" H 2250 1500 50  0001 C CNN
-	1    2250 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C3
-U 1 1 5EAE32B1
-P 2800 1500
-F 0 "C3" H 2915 1546 50  0000 L CNN
-F 1 "47pF" H 2915 1455 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric" H 2838 1350 50  0001 C CNN
-F 3 "~" H 2800 1500 50  0001 C CNN
-	1    2800 1500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R3
-U 1 1 5EAE40DE
-P 2250 1000
-F 0 "R3" H 2050 1050 50  0000 L CNN
-F 1 "10M" H 2050 950 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2180 1000 50  0001 C CNN
-F 3 "~" H 2250 1000 50  0001 C CNN
-	1    2250 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R4
-U 1 1 5EAE4756
-P 2800 1000
-F 0 "R4" H 2870 1046 50  0000 L CNN
-F 1 "1k" H 2870 955 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric" V 2730 1000 50  0001 C CNN
-F 3 "~" H 2800 1000 50  0001 C CNN
-	1    2800 1000
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:Crystal Y1
-U 1 1 5EAE53AE
-P 2550 1250
-F 0 "Y1" H 2550 1518 50  0000 C CNN
-F 1 "3.6864" H 2550 1427 50  0000 C CNN
-F 2 "Crystal:Crystal_HC49-U_Horizontal" H 2550 1250 50  0001 C CNN
-F 3 "~" H 2550 1250 50  0001 C CNN
-	1    2550 1250
-	1    0    0    -1  
-$EndComp
-$Comp
-L 74xx:74LS04 U1
-U 1 1 5EAED368
-P 1850 1250
-F 0 "U1" H 1850 1550 50  0000 C CNN
-F 1 "74LS04" H 1850 1450 50  0000 C CNN
-F 2 "Package_DIP:DIP-14_W7.62mm" H 1850 1250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS04" H 1850 1250 50  0001 C CNN
-	1    1850 1250
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	1550 1250 1550 2600
 Wire Wire Line
 	1550 2600 1850 2600
-Wire Wire Line
-	2150 1250 2250 1250
-Wire Wire Line
-	2250 1250 2250 1150
-Connection ~ 2250 1250
-Wire Wire Line
-	2250 1250 2400 1250
-Wire Wire Line
-	2250 1350 2250 1250
-Wire Wire Line
-	2700 1250 2800 1250
-Wire Wire Line
-	2800 1250 2800 1150
-Wire Wire Line
-	2800 1250 2800 1350
-Connection ~ 2800 1250
-Wire Wire Line
-	2250 1650 2800 1650
-$Comp
-L power:GND #PWR09
-U 1 1 5EB1616A
-P 2800 1650
-F 0 "#PWR09" H 2800 1400 50  0001 C CNN
-F 1 "GND" H 2805 1477 50  0000 C CNN
-F 2 "" H 2800 1650 50  0001 C CNN
-F 3 "" H 2800 1650 50  0001 C CNN
-	1    2800 1650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1550 1250 1550 750 
-Wire Wire Line
-	1550 750  2250 750 
-Wire Wire Line
-	2250 750  2250 850 
-Connection ~ 1550 1250
-Wire Wire Line
-	2250 750  2800 750 
-Wire Wire Line
-	2800 750  2800 850 
-Connection ~ 2250 750 
-Connection ~ 2800 1650
 Text GLabel 1800 3300 0    50   Output ~ 0
 ~M1
-Text GLabel 1000 1250 0    50   Output ~ 0
+Text GLabel 1650 1250 2    50   Output ~ 0
 CLK
-Wire Wire Line
-	1000 1250 1550 1250
 Entry Wire Line
 	3750 2200 3650 2300
 Entry Wire Line
@@ -2108,6 +1996,55 @@ F 3 "" H 4900 4200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	4900 4200 4900 4250
+$Comp
+L power:GND #PWR03
+U 1 1 5F85FCD9
+P 1250 1600
+F 0 "#PWR03" H 1250 1350 50  0001 C CNN
+F 1 "GND" H 1255 1427 50  0000 C CNN
+F 2 "" H 1250 1600 50  0001 C CNN
+F 3 "" H 1250 1600 50  0001 C CNN
+	1    1250 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR02
+U 1 1 5F860570
+P 1250 900
+F 0 "#PWR02" H 1250 750 50  0001 C CNN
+F 1 "+5V" H 1265 1073 50  0000 C CNN
+F 2 "" H 1250 900 50  0001 C CNN
+F 3 "" H 1250 900 50  0001 C CNN
+	1    1250 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L Oscillator:TFT680 X1
+U 1 1 5F81E577
+P 1250 1250
+F 0 "X1" H 1550 1600 50  0000 L CNN
+F 1 "3.6864Mhz" H 1400 1500 50  0000 L CNN
+F 2 "Oscillator:Oscillator_DIP-14" H 1700 900 50  0001 C CNN
+F 3 "http://cdn-reichelt.de/documents/datenblatt/B400/OSZI.pdf" H 1150 1250 50  0001 C CNN
+	1    1250 1250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1250 900  1250 950 
+Wire Wire Line
+	1250 900  900  900 
+Wire Wire Line
+	900  900  900  1250
+Wire Wire Line
+	900  1250 950  1250
+Connection ~ 1250 900 
+Wire Wire Line
+	1550 1250 1550 2600
+Wire Wire Line
+	1550 1250 1650 1250
+Connection ~ 1550 1250
+Wire Wire Line
+	1250 1600 1250 1550
 Wire Bus Line
 	3650 2300 3650 3950
 Wire Bus Line
