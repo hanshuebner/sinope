@@ -131,8 +131,8 @@ Pin 16 = NC           S0 = 0   S1 = 0
 
 Pin 15 = RAMCS        S0 = 0   S1 = 1
 111  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-112  -x-- ---- -x-- -x-- ---- ---- ---- ---- ---- ---- ----
-113  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+112  -x-- ---- x--- ---- ---- ---- ---- ---- ---- ---- ----
+113  -x-- ---- ---- x--- ---- ---- ---- ---- ---- ---- ----
 114  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 115  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 116  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -144,8 +144,8 @@ Pin 15 = RAMCS        S0 = 0   S1 = 1
 
 Pin 14 = ROMCS        S0 = 0   S1 = 1
 122  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-123  -x-- ---- -x-- ---- ---- ---- ---- ---- ---- ---- ----
-124  ---- ---- ---- -x-- ---- ---- ---- ---- ---- ---- ----
+123  -x-- ---- -x-- -x-- ---- ---- ---- ---- ---- ---- ----
+124  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 125  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 126  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 127  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
