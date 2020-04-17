@@ -3,9 +3,9 @@
 AR
   0  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 23 = CTCCS        S0 = 0   S1 = 1
+Pin 23 = ROMA16       S0 = 1   S1 = 0
   1  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-  2  ---- -x-- ---- ---- -x-- -x-- -x-- -x-- ---- ---- ----
+  2  x--- -x-- ---- ---- x--- ---- ---- ---- ---- ---- --x-
   3  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
   4  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
   5  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -14,9 +14,9 @@ Pin 23 = CTCCS        S0 = 0   S1 = 1
   8  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
   9  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 22 = PIOCS        S0 = 0   S1 = 1
+Pin 22 = ROMA15       S0 = 1   S1 = 0
  10  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
- 11  ---- -x-- ---- ---- -x-- -x-- -x-- x--- ---- ---- ----
+ 11  x--- -x-- ---- x--- ---- ---- ---- ---- ---- ---- --x-
  12  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  13  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  14  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -27,9 +27,9 @@ Pin 22 = PIOCS        S0 = 0   S1 = 1
  19  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  20  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 21 = SIOCS        S0 = 0   S1 = 1
+Pin 21 = ROMA14       S0 = 1   S1 = 0
  21  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
- 22  ---- -x-- ---- ---- -x-- -x-- x--- -x-- ---- ---- ----
+ 22  x--- -x-- x--- ---- ---- ---- ---- ---- ---- ---- --x-
  23  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  24  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  25  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -42,9 +42,9 @@ Pin 21 = SIOCS        S0 = 0   S1 = 1
  32  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  33  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 20 = NC           S0 = 0   S1 = 0
- 34  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
- 35  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+Pin 20 = AX16         S0 = 1   S1 = 0
+ 34  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
+ 35  x--- x--- ---- ---- ---- ---- x--- ---- ---- ---- ----
  36  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  37  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  38  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -59,9 +59,9 @@ Pin 20 = NC           S0 = 0   S1 = 0
  47  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  48  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 19 = NC           S0 = 0   S1 = 0
- 49  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
- 50  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+Pin 19 = BANKCPU      S0 = 1   S1 = 1
+ 49  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+ 50  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
  51  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  52  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  53  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -78,9 +78,9 @@ Pin 19 = NC           S0 = 0   S1 = 0
  64  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  65  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 18 = NC           S0 = 0   S1 = 0
- 66  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
- 67  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+Pin 18 = RAMA16       S0 = 1   S1 = 1
+ 66  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+ 67  ---- ---- ---- ---x --x- ---- ---- ---- ---- ---- ----
  68  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  69  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  70  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -97,9 +97,9 @@ Pin 18 = NC           S0 = 0   S1 = 0
  81  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  82  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 17 = NC           S0 = 0   S1 = 0
- 83  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
- 84  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+Pin 17 = RAMA15       S0 = 1   S1 = 0
+ 83  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
+ 84  x--- -x-- ---- ---- ---- x--- ---- ---- ---- ---- ---x
  85  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  86  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  87  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -114,9 +114,9 @@ Pin 17 = NC           S0 = 0   S1 = 0
  96  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
  97  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 16 = NC           S0 = 0   S1 = 0
- 98  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
- 99  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
+Pin 16 = RAMA14       S0 = 1   S1 = 0
+ 98  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
+ 99  x--- -x-- ---- ---- x--- ---- ---- ---- ---- ---- ---x
 100  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 101  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 102  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -129,10 +129,10 @@ Pin 16 = NC           S0 = 0   S1 = 0
 109  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 110  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 15 = RAMCS        S0 = 0   S1 = 1
-111  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-112  -x-- ---- x--- ---- ---- ---- ---- ---- ---- ---- ----
-113  -x-- ---- ---- x--- ---- ---- ---- ---- ---- ---- ----
+Pin 15 = RAMA13       S0 = 1   S1 = 0
+111  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
+112  x--- -x-- ---- x--- ---- ---- ---- ---- ---- ---- ---x
+113  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 114  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 115  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 116  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
@@ -142,9 +142,9 @@ Pin 15 = RAMCS        S0 = 0   S1 = 1
 120  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 121  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 
-Pin 14 = ROMCS        S0 = 0   S1 = 1
-122  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
-123  -x-- ---- -x-- -x-- ---- ---- ---- ---- ---- ---- ----
+Pin 14 = RAMA12       S0 = 1   S1 = 0
+122  ---- ---- ---- ---- ---- ---- ---- x--- x--- x--- x---
+123  x--- -x-- x--- ---- ---- ---- ---- ---- ---- ---- ---x
 124  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 125  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx
 126  xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx

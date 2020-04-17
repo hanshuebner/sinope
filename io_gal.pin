@@ -21,7 +21,7 @@
   17   | NC       | NC
   18   | NC       | NC
   19   | NC       | NC
-  20   | NC       | NC
+  20   | BANKCS   | Output
   21   | SIOCS    | Output
   22   | PIOCS    | Output
   23   | CTCCS    | Output

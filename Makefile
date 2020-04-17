@@ -1,7 +1,7 @@
 
 GALASM ?= galasm
 
-all: sinope_gal.jed
+all: io_gal.jed memory_gal.jed
 
 .SUFFIXES: .jed .pld
 
