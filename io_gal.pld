@@ -27,3 +27,5 @@ Memory:
 
 0000-3FFF ROM
 4000-FFFF RAM
+
+See memory_gal.pld for a description of the memory banking logic.
