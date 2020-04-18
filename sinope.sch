@@ -2637,10 +2637,4 @@ Wire Bus Line
 	6200 6250 6200 7950
 Wire Bus Line
 	12250 6250 12250 7750
-$Sheet
-S 14500 5350 1150 150 
-U 5E9E09B6
-F0 "CompositeModulator" 50
-F1 "CompositeModulator.sch" 50
-$EndSheet
 $EndSCHEMATC
