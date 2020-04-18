@@ -148,8 +148,6 @@ F 3 "~" H 1400 1700 50  0001 C CNN
 	1    1400 1700
 	1    0    0    -1  
 $EndComp
-Text GLabel 1200 1450 0    50   Input ~ 0
-Y
 Wire Wire Line
 	1200 1450 1400 1450
 Connection ~ 1400 1450
@@ -199,8 +197,6 @@ Wire Wire Line
 	1700 1450 1700 850 
 Wire Wire Line
 	1400 1850 1400 2000
-Text GLabel 1200 2700 0    50   Input ~ 0
-B-Y
 $Comp
 L Device:R_Small R7
 U 1 1 5E9EF1A1
@@ -323,8 +319,6 @@ Wire Wire Line
 Wire Wire Line
 	2250 2700 2500 2700
 Connection ~ 2500 2700
-Text GLabel 1200 3800 0    50   Input ~ 0
-R-Y
 $Comp
 L Device:R_Small R15
 U 1 1 5EA150AD
@@ -993,8 +987,6 @@ F 3 "" H 6850 2200 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	6850 2200 6850 2300
-Text GLabel 8100 2350 2    50   Output ~ 0
-CVID
 Wire Wire Line
 	6850 3750 7500 3750
 Wire Wire Line
@@ -1154,4 +1146,12 @@ Text Notes 3950 7000 0    50   ~ 0
 This is a reproduction of the SVI328 video modulator circuitry
 Text Notes 3950 7150 0    50   ~ 0
 from http://www.samdal.com/SVIDOCS/STM-A_SVI328.pdf page 21
+Text HLabel 8100 2350 2    50   Output ~ 0
+CVID
+Text HLabel 1200 1450 0    50   Input ~ 0
+Y
+Text HLabel 1200 2700 0    50   Input ~ 0
+B-Y
+Text HLabel 1200 3800 0    50   Input ~ 0
+R-Y
 $EndSCHEMATC
