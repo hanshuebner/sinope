@@ -17,6 +17,17 @@ K Power Supervisor
 F https://datasheets.maximintegrated.com/en/ds/MAX690-MAX695.pdf
 $ENDCMP
 #
+$CMP R_TRIM_Small
+D Resistor, small symbol
+K R resistor
+F ~
+$ENDCMP
+#
+$CMP TBA520
+D Synchronous demodulator for PAL colour television receivers
+F http://www.bg-electronics.de/datenblaetter/Schaltkreise/TBA520.pdf
+$ENDCMP
+#
 $CMP TC551001
 D 128KB Static RAM
 F http://www.donat.org/ti92/TC551001B-L.pdf

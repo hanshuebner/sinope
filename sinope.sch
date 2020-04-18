@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 1
+Sheet 1 2
 Title "sinope Z80 Single Board Computer"
 Date "2020-04-16"
 Rev "1"
@@ -2592,28 +2592,6 @@ Wire Bus Line
 Connection ~ 10250 6250
 Wire Wire Line
 	9100 8000 9100 8100
-Wire Bus Line
-	5800 8250 5800 10250
-Wire Bus Line
-	10250 6250 10250 8150
-Wire Bus Line
-	3650 800  10000 800 
-Wire Bus Line
-	7950 6400 7950 9050
-Wire Bus Line
-	8250 6250 8250 9500
-Wire Bus Line
-	4950 650  4950 1850
-Wire Bus Line
-	7200 650  7200 1800
-Wire Bus Line
-	10400 650  10400 1800
-Wire Bus Line
-	3650 800  3650 6250
-Wire Bus Line
-	6200 6250 6200 7950
-Wire Bus Line
-	12250 6250 12250 7750
 $Comp
 L sinope:MEMORY_GAL U10
 U 1 1 607DA37D
@@ -2637,4 +2615,32 @@ F 3 "" H 4900 5100 50  0001 C CNN
 	1    4900 5100
 	1    0    0    -1  
 $EndComp
+Wire Bus Line
+	5800 8250 5800 10250
+Wire Bus Line
+	10250 6250 10250 8150
+Wire Bus Line
+	3650 800  10000 800 
+Wire Bus Line
+	7950 6400 7950 9050
+Wire Bus Line
+	8250 6250 8250 9500
+Wire Bus Line
+	4950 650  4950 1850
+Wire Bus Line
+	7200 650  7200 1800
+Wire Bus Line
+	10400 650  10400 1800
+Wire Bus Line
+	3650 800  3650 6250
+Wire Bus Line
+	6200 6250 6200 7950
+Wire Bus Line
+	12250 6250 12250 7750
+$Sheet
+S 14500 5350 1150 150 
+U 5E9E09B6
+F0 "CompositeModulator" 50
+F1 "CompositeModulator.sch" 50
+$EndSheet
 $EndSCHEMATC
