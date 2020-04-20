@@ -3,7 +3,7 @@ EELAYER 30 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 1 2
+Sheet 1 1
 Title "sinope Z80 Single Board Computer"
 Date "2020-04-16"
 Rev "1"
@@ -642,12 +642,6 @@ F 3 "" H 13550 4550 50  0001 C CNN
 	1    13550 4550
 	1    0    0    -1  
 $EndComp
-NoConn ~ 15200 4000
-NoConn ~ 15200 3900
-NoConn ~ 15200 3700
-NoConn ~ 15200 3500
-NoConn ~ 15200 3400
-NoConn ~ 15200 3300
 NoConn ~ 15200 2200
 NoConn ~ 15200 1600
 Wire Wire Line
@@ -670,48 +664,15 @@ Wire Wire Line
 Wire Wire Line
 	14000 2200 14100 2200
 Wire Wire Line
-	14900 1700 14900 3900
-Wire Wire Line
-	14900 1700 15200 1700
-Wire Wire Line
 	14000 2100 15200 2100
 Wire Wire Line
 	14000 2000 15200 2000
 Wire Wire Line
 	14000 1900 15200 1900
-Wire Wire Line
-	15000 2300 15000 4100
-Wire Wire Line
-	15000 2300 15200 2300
-Wire Wire Line
-	14750 3200 15200 3200
-$Comp
-L power:GND #PWR019
-U 1 1 5F911907
-P 14750 3200
-F 0 "#PWR019" H 14750 2950 50  0001 C CNN
-F 1 "GND" H 14750 3050 50  0000 C CNN
-F 2 "" H 14750 3200 50  0001 C CNN
-F 3 "" H 14750 3200 50  0001 C CNN
-	1    14750 3200
-	1    0    0    -1  
-$EndComp
 Text Label 14350 4200 2    50   ~ 0
 RxDB
 Text Label 14350 4000 2    50   ~ 0
 TxDB
-Wire Wire Line
-	14800 3600 15200 3600
-Wire Wire Line
-	14800 4000 14800 3600
-Wire Wire Line
-	14000 4000 14800 4000
-Wire Wire Line
-	15100 3800 15200 3800
-Wire Wire Line
-	15100 4200 15100 3800
-Wire Wire Line
-	14000 4200 15100 4200
 Text Label 14350 3900 2    50   ~ 0
 DTRA
 Text Label 14350 4100 2    50   ~ 0
@@ -720,17 +681,6 @@ Wire Wire Line
 	14000 3900 14900 3900
 Wire Wire Line
 	14000 4100 15000 4100
-$Comp
-L Connector:DB9_Male J4
-U 1 1 5F8AE309
-P 15500 3600
-F 0 "J4" H 15680 3646 50  0000 L CNN
-F 1 "SERIAL1" H 15680 3555 50  0000 L CNN
-F 2 "Connector_Dsub:DSUB-9_Male_EdgeMount_P2.77mm" H 15500 3600 50  0001 C CNN
-F 3 " ~" H 15500 3600 50  0001 C CNN
-	1    15500 3600
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector:DB9_Male J2
 U 1 1 5F8ABC1E
@@ -810,8 +760,6 @@ F 3 "~" H 14100 3300 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	12900 3300 12900 3200
-Wire Wire Line
-	13100 3300 12900 3300
 Wire Wire Line
 	12900 3400 13100 3400
 Wire Wire Line
@@ -1475,7 +1423,7 @@ Wire Wire Line
 Connection ~ 1250 3000
 Wire Wire Line
 	1250 3000 1850 3000
-Text GLabel 12600 9150 0    50   Input ~ 0
+Text GLabel 13950 9150 2    50   Input ~ 0
 RAMVCC
 Text GLabel 4850 7700 2    50   Output ~ 0
 RAMVCC
@@ -1564,15 +1512,7 @@ Wire Wire Line
 Wire Wire Line
 	11800 2300 12500 2300
 Wire Wire Line
-	12500 2300 12500 4200
-Wire Wire Line
-	12500 4200 13100 4200
-Wire Wire Line
 	11800 2500 12450 2500
-Wire Wire Line
-	12450 2500 12450 4000
-Wire Wire Line
-	12450 4000 13100 4000
 Text GLabel 4700 2100 0    50   Input ~ 0
 ~CTCCS
 Wire Wire Line
@@ -1709,8 +1649,6 @@ Wire Bus Line
 	13700 6400 13700 7350
 Wire Wire Line
 	13050 9150 13050 9350
-Wire Wire Line
-	12600 9150 13050 9150
 Wire Wire Line
 	13050 6550 13050 6500
 Wire Wire Line
@@ -2615,6 +2553,53 @@ F 3 "" H 4900 5100 50  0001 C CNN
 	1    4900 5100
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	13850 9150 13950 9150
+Connection ~ 13850 9150
+Wire Wire Line
+	15000 2300 15200 2300
+Wire Wire Line
+	15000 2300 15000 4100
+Wire Wire Line
+	14900 1700 14900 3900
+Wire Wire Line
+	14900 1700 15200 1700
+Wire Wire Line
+	13100 3300 12900 3300
+$Comp
+L Connector:Conn_01x03_Male J4
+U 1 1 5EAC89FF
+P 15400 5000
+F 0 "J4" H 15508 5281 50  0000 C CNN
+F 1 "SERIAL1" H 15508 5190 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 15400 5000 50  0001 C CNN
+F 3 "~" H 15400 5000 50  0001 C CNN
+	1    15400 5000
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	12500 4900 15200 4900
+Wire Wire Line
+	12500 2300 12500 4900
+Wire Wire Line
+	12450 5000 15200 5000
+Wire Wire Line
+	12450 2500 12450 5000
+$Comp
+L power:GND #PWR0101
+U 1 1 5ED291FA
+P 15100 5150
+F 0 "#PWR0101" H 15100 4900 50  0001 C CNN
+F 1 "GND" H 15100 5000 50  0000 C CNN
+F 2 "" H 15100 5150 50  0001 C CNN
+F 3 "" H 15100 5150 50  0001 C CNN
+	1    15100 5150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	15100 5150 15100 5100
+Wire Wire Line
+	15100 5100 15200 5100
 Wire Bus Line
 	5800 8250 5800 10250
 Wire Bus Line

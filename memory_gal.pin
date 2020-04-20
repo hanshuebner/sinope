@@ -4,15 +4,15 @@
 -----------------------------
    1   | WR       | Clock/Input
    2   | CS       | Input
-   3   | D0       | Input
-   4   | D1       | Input
-   5   | D2       | Input
-   6   | D3       | Input
-   7   | D4       | Input
-   8   | A12      | Input
-   9   | A13      | Input
-  10   | A14      | Input
-  11   | A15      | Input
+   3   | A12      | Input
+   4   | A13      | Input
+   5   | A14      | Input
+   6   | A15      | Input
+   7   | D0       | Input
+   8   | D1       | Input
+   9   | D2       | Input
+  10   | D3       | Input
+  11   | D4       | Input
   12   | GND      | GND
   13   | ROMRAM   | Input
   14   | RAMA12   | Output

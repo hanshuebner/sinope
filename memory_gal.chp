@@ -7,23 +7,23 @@
                           |                 |
                        CS |  2           23 | ROMA16
                           |                 |
-                       D0 |  3           22 | ROMA15
+                      A12 |  3           22 | ROMA15
                           |                 |
-                       D1 |  4           21 | ROMA14
+                      A13 |  4           21 | ROMA14
                           |                 |
-                       D2 |  5           20 | AX16
+                      A14 |  5           20 | AX16
                           |                 |
-                       D3 |  6           19 | BANKCPU
+                      A15 |  6           19 | BANKCPU
                           |                 |
-                       D4 |  7           18 | RAMA16
+                       D0 |  7           18 | RAMA16
                           |                 |
-                      A12 |  8           17 | RAMA15
+                       D1 |  8           17 | RAMA15
                           |                 |
-                      A13 |  9           16 | RAMA14
+                       D2 |  9           16 | RAMA14
                           |                 |
-                      A14 | 10           15 | RAMA13
+                       D3 | 10           15 | RAMA13
                           |                 |
-                      A15 | 11           14 | RAMA12
+                       D4 | 11           14 | RAMA12
                           |                 |
                       GND | 12           13 | ROMRAM
                           -------------------
