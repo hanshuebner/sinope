@@ -1,4 +1,4 @@
 (sym_lib_table
   (lib (name sinope)(type Legacy)(uri ${KIPRJMOD}/sinope.lib)(options "")(descr ""))
-  (lib (name sinope-rescue)(type Legacy)(uri ${KIPRJMOD}/sinope-rescue.lib)(options "")(descr ""))
+  (lib (name sinope-rescue)(type Legacy)(uri ${KIPRJMOD}/sinope-rescue.lib)(options "")(descr "")(disabled))
 )
