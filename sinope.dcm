@@ -11,6 +11,12 @@ D Real-Time Clock
 F https://datasheets.maximintegrated.com/en/ds/DS17285-DS17887.pdf
 $ENDCMP
 #
+$CMP FT232RL
+D USB to Serial Interface, SSOP-28
+K FTDI USB Serial
+F https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT232R.pdf
+$ENDCMP
+#
 $CMP MAX695
 D Microprocessor Supervisory Circuit, DIP-16
 K Power Supervisor
