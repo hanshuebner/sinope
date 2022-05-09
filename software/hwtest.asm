@@ -34,7 +34,6 @@ hwinit:
               out   (ctc1), a
               ld    a, 169
               out   (ctc1), a
-              ld    hl, $8000
 start:
               ld    a, $21
               out   (pio1data), a
