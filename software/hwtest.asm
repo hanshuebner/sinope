@@ -4,16 +4,16 @@
 
 sio0data:     equ   $80
 sio0control:  equ   $81
-sio1data:     equ   $81
-sio1control:  equ   $82
-ctc0:         equ   $83
-ctc1:         equ   $84
-ctc2:         equ   $85
-ctc3:         equ   $86
-pio0data:     equ   $87
-pio0control:  equ   $88
-pio1data:     equ   $89
-pio1control:  equ   $8A
+sio1data:     equ   $82
+sio1control:  equ   $83
+ctc0:         equ   $84
+ctc1:         equ   $85
+ctc2:         equ   $86
+ctc3:         equ   $87
+pio0data:     equ   $88
+pio0control:  equ   $89
+pio1data:     equ   $8A
+pio1control:  equ   $8B
 
 rambase:      equ   $8000
 
