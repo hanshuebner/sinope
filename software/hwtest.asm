@@ -1,6 +1,7 @@
 ; -*- gas -*-
 
               org   0
+              jp    init
 
 sio0data:     equ   $80
 sio0control:  equ   $81
@@ -17,11 +18,14 @@ pio1control:  equ   $8B
 
 rambase:      equ   $8000
 
+init:
+              ld    sp, $ffff
 hwinit:
+              ;; configure PIO as outputs
               ld    a, %00001111
               out   (pio0control), a
               out   (pio1control), a
-                                    ; set up ctc to generate 1200 baud clock (?)
+              ;; set up ctc to generate 1200 bps clock
               ld    a, %00000101
               out   (ctc0), a
               ld    a, 169
@@ -32,18 +36,48 @@ hwinit:
               out   (ctc1), a
               ld    hl, $8000
 start:
-              ld    (hl), $55
-              ld    a, %01010101
-              out   (pio0data), a
-              ld    a, %10101010
+              ld    a, $21
               out   (pio1data), a
-              ld    (hl), $aa
-              ld    a, %10101010
+              ld    a, $01
               out   (pio0data), a
-              ld    a, %01010101
+              call  delay
+              ld    a, $43
               out   (pio1data), a
-              inc   hl
-              ld    a, $80
-              or    h
-              ld    h, a
+              ld    a, $00
+              out   (pio0data), a
+              call  delay
               jp    start
+delay:
+              push  af
+              ld    a, #0
+loop:
+              call  nested
+              inc   a
+              djnz  loop
+              pop   af
+              ret
+nested:
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              ret
