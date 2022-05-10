@@ -35,12 +35,12 @@ hwinit:
               ld    a, 169
               out   (ctc1), a
 start:
-              ld    a, $21
+              ld    a, $12
               out   (pio1data), a
               ld    a, $01
               out   (pio0data), a
               call  delay
-              ld    a, $43
+              ld    a, $34
               out   (pio1data), a
               ld    a, $00
               out   (pio0data), a
