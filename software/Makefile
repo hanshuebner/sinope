@@ -6,4 +6,4 @@ all: hwtest.bin
 	memsim2 -d $(SERIAL) -m 27256 -r -100 -e $<
 
 .asm.bin:
-	z80asm -o $@ $<
+	z80asm --list=$*.lst --label=$*.sym -o $@ $<

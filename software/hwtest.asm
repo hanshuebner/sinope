@@ -3,7 +3,15 @@
               org   0
               di
               jp    init
-              ds    $100
+              ds    $200
+
+              seek  $100
+              org   $100
+intvectors:
+              dw    ignint
+              dw    ignint
+              dw    frameirq
+              dw    ignint
 
 sioadata:     equ   $80
 sioacontrol:  equ   $81
@@ -20,22 +28,28 @@ piobcontrol:  equ   $8b
 
 rambase:      equ   $8000
 
-              org   $100
-              seek  $100
+              seek  $200
+              org   $200
 init:
               ld    sp, $ffff
+              ;; Set up interrupts
+              ld    a, intvectors >> 8
+              ld    i, a
+              im    2
+              ei
+              ;; Initialize hardware
               call  hwinit
+              ;; Initialize counter value (for now)
               ld    hl, $ffff
+              ;; LED off
+              ld    a, 0
+              out   (pioadata), a
 start:
               ld    a, h
               out   (piobdata), a
-              ld    a, $01
-              out   (pioadata), a
               call  delay
               ld    a, l
               out   (piobdata), a
-              ld    a, $00
-              out   (pioadata), a
               call  delay
               or    a
               ld    a, l
@@ -51,7 +65,7 @@ start:
               jp    start
 delay:
               push  af
-              ld    a, #0
+              ld    a, 0
 loop:
               call  nested
               inc   a
@@ -83,19 +97,36 @@ nested:
               nop
               nop
               ret
+
+frameirq:
+              push  af
+              ei
+              ld    a, c
+              xor   1
+              ld    c, a
+              out   (pioadata), a
+              pop   af
+              reti
+
+ignint:
+              ei
+              reti
 	
 hwinit:
-              ;; configure PIO port A as bits 0-1 output, 2-7 input
+              ;; Configure PIO port A as bits 0-1 output, 2-7 input
               ld    a, %00001111
               out   (pioacontrol), a
               ld    a, %11111100
               out   (pioacontrol), a
-              ;; configure PIO port B as outputs
+              ;; Configure PIO port B as outputs
               ld    a, %00000000
               out   (piobcontrol), a
               ld    a, %11111111
               out   (piobcontrol), a
-              ;; set up ctc to generate 1200 bps clock
+              ;; Set CTC interrupt vector (0)
+              ld    a, 0
+              out   (ctc0), a
+              ;; Set up CTC 0 and 1 to generate 1200 bps clock
               ld    a, %00000101
               out   (ctc0), a
               ld    a, 169
@@ -104,6 +135,12 @@ hwinit:
               out   (ctc1), a
               ld    a, 169
               out   (ctc1), a
+              ;; Set up CTC 2 to generate a frame interrupt
+              ld    a, %10100101
+              out   (ctc2), a
+              ld    a, 200
+              out   (ctc2), a
+              ;; Initialize SIO
               ld    b, 12             ; load B with number of bytes (12)
               ld    hl, sio_init_data ; HL points to start of data
               ld    c, sioacontrol    ; I/O-port for write
