@@ -39,12 +39,16 @@ init:
               ei
               ;; Initialize hardware
               call  hwinit
+              ;; Say hello
+              call  hello
               ;; Initialize counter value (for now)
               ld    hl, $0000
 start:
               in    a, (pioadata)
               and   $10
               jr    nz, start
+              ld    a, 64
+              call  putc
               or    a
               ld    a, l
               inc   a
@@ -129,3 +133,29 @@ sio_init_data:
               db    $03, %11000001  ; write to WR3: enable RX 8bit
               db    $04, %00000100  ; write to WR4: clkx1, 1 stop bit, no parity
               db    $05, %01101000  ; write to WR5: DTR inactive, enable TX 8bit, BREAK off, TX on, RTS inactive
+
+message:      dm    "Hello world!\r\n\0"
+
+hello:
+              ld    hl, message
+hello_loop:
+              ld    a, (hl)
+              or    a
+              jr    z, hello_end
+              call  putc
+              inc   hl
+              jr    hello_loop
+hello_end:
+              ret
+              
+
+putc:
+              push  af
+putc_wait:
+              in    a, (sioacontrol)
+              bit   2, a
+              jr    z, putc_wait
+              pop   af
+              out   (sioadata), a
+              ret
+              
