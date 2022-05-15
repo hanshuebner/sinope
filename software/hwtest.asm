@@ -42,7 +42,9 @@ init:
               ;; Initialize counter value (for now)
               ld    hl, $0000
 start:
-              call  delay
+              in    a, (pioadata)
+              and   $10
+              jr    nz, start
               or    a
               ld    a, l
               inc   a
@@ -55,224 +57,6 @@ start:
               daa
               ld    h, a
               jp    start
-delay:
-              push  af
-              ld    a, 0
-loop:
-              call  nested
-              inc   a
-              djnz  loop
-              pop   af
-              ret
-nested:
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              nop
-              ret
 
 frameirq:
               push  af
@@ -305,7 +89,7 @@ ignint:
 	
 hwinit:
               ;; Configure PIO port A as bits 0-1 output, 2-7 input
-              ld    a, %00001111
+              ld    a, %11001111
               out   (pioacontrol), a
               ld    a, %11111100
               out   (pioacontrol), a
