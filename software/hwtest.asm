@@ -40,16 +40,8 @@ init:
               ;; Initialize hardware
               call  hwinit
               ;; Initialize counter value (for now)
-              ld    hl, $ffff
-              ;; LED off
-              ld    a, 0
-              out   (pioadata), a
+              ld    hl, $0000
 start:
-              ld    a, h
-              out   (piobdata), a
-              call  delay
-              ld    a, l
-              out   (piobdata), a
               call  delay
               or    a
               ld    a, l
@@ -96,15 +88,214 @@ nested:
               nop
               nop
               nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
+              nop
               ret
 
 frameirq:
               push  af
               ei
               ld    a, c
+              and   1
+              jr    z, frame0
+frame1:
+              ld    a, c
               xor   1
               ld    c, a
               out   (pioadata), a
+              ld    a, l
+              out   (piobdata), a
+              pop   af
+              reti
+frame0:
+              ld    a, c
+              xor   1
+              ld    c, a
+              out   (pioadata), a
+              ld    a, h
+              out   (piobdata), a
               pop   af
               reti
 
@@ -138,7 +329,7 @@ hwinit:
               ;; Set up CTC 2 to generate a frame interrupt
               ld    a, %10100101
               out   (ctc2), a
-              ld    a, 200
+              ld    a, 50
               out   (ctc2), a
               ;; Initialize SIO
               ld    b, 12             ; load B with number of bytes (12)
