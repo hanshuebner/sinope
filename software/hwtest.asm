@@ -25,18 +25,29 @@ rambase:      equ   $8000
 init:
               ld    sp, $ffff
               call  hwinit
-	
+              ld    hl, $ffff
 start:
-              ld    a, $12
+              ld    a, h
               out   (piobdata), a
               ld    a, $01
               out   (pioadata), a
               call  delay
-              ld    a, $34
+              ld    a, l
               out   (piobdata), a
               ld    a, $00
               out   (pioadata), a
               call  delay
+              or    a
+              ld    a, l
+              inc   a
+              daa
+              ld    l, a
+              jr    nc, start
+              or    a
+              ld    a, h
+              inc   a
+              daa
+              ld    h, a
               jp    start
 delay:
               push  af
@@ -80,7 +91,7 @@ hwinit:
               ld    a, %11111100
               out   (pioacontrol), a
               ;; configure PIO port B as outputs
-              ld    a, %00001111
+              ld    a, %00000000
               out   (piobcontrol), a
               ld    a, %11111111
               out   (piobcontrol), a
