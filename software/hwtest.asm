@@ -12,6 +12,7 @@ intvectors:
               dw    ignint
               dw    frameirq
               dw    ignint
+              dw    pioaint
 
 sioadata:     equ   $80
 sioacontrol:  equ   $81
@@ -32,23 +33,31 @@ rambase:      equ   $8000
               org   $200
 init:
               ld    sp, $ffff
+              ;; Initialize hardware
+              call  hwinit
               ;; Set up interrupts
               ld    a, intvectors >> 8
               ld    i, a
               im    2
               ei
-              ;; Initialize hardware
-              call  hwinit
               ;; Say hello
               call  hello
               ;; Initialize counter value (for now)
               ld    hl, $0000
 start:
-              in    a, (pioadata)
-              and   $10
-              jr    nz, start
-              ld    a, 64
+              ld    a, h
+              call  print_number
+              ld    a, l
+              call  print_number
+              ld    a, b
+              call  print_number
+              ld    a, '\r'
               call  putc
+              ld    a, '\n'
+              call  putc
+              jp    start
+
+              ;; fixme not used
               or    a
               ld    a, l
               inc   a
@@ -90,12 +99,43 @@ frame0:
 ignint:
               ei
               reti
+
+pioaint:
+              push  af
+              ei
+              in    a, (pioadata)
+              and   $08
+              jr    z, down
+up:           
+              inc   b
+              cp    13
+              jr    nz, pioadone
+              ld    b, 1
+              inc   hl
+              jr    pioadone
+down:
+              dec   b
+              jr    nz, pioadone
+              ld    b, 12
+              dec   hl
+pioadone:
+              pop   af
+              reti
+              
 	
 hwinit:
+              ;; Configure PIO interrupt vector
+              ld    a, $08
+              out   (pioacontrol), a
               ;; Configure PIO port A as bits 0-1 output, 2-7 input
               ld    a, %11001111
               out   (pioacontrol), a
               ld    a, %11111100
+              out   (pioacontrol), a
+              ;; Set PIO A interrupt control word and mask
+              ld    a, %10110111
+              out   (pioacontrol), a
+              ld    a, %11111011
               out   (pioacontrol), a
               ;; Configure PIO port B as outputs
               ld    a, %00000000
@@ -147,7 +187,20 @@ hello_loop:
               jr    hello_loop
 hello_end:
               ret
-              
+
+print_number:
+              push  af
+              srl   a
+              srl   a
+              srl   a
+              srl   a
+              add   '0'
+              call  putc
+              pop   af
+              and   $0f
+              add   '0'
+              call  putc
+              ret
 
 putc:
               push  af
